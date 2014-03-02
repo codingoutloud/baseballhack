@@ -33,3 +33,7 @@ http://stackoverflow.com/questions/4764932/in-python-how-do-i-read-the-exif-data
 THis is a master list for a given date.  We could use this for the 9/4/13 photo.
 http://gd2.mlb.com/components/game/mlb/year_2013/month_09/day_04/master_scoreboard.json
 I'm sure we could go for a more dynamic approach easilty by doing http://gd2.mlb.com/components/game/mlb/year_{from-photo}/month_{from-photo}/day_{from-photo}/master_scoreboard.json
+
+
+Format of zoom.it embedded control - the 5 characters before .js will change with each image:
+<script src="http://zoom.it/YcnBL.js?width=auto&height=400px"></script>
