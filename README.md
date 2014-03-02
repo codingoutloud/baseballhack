@@ -23,3 +23,6 @@ Instagram Client ID
 725032259a6249f5b6b391c436f6b178
 
 Location based searches of instagram should just need the client ID in the request. Can do GPS coordinates or facebook/foursquare checkin IDs for locations.  http://instagram.com/developer/endpoints/locations/
+
+Get fenway park data from seatgeek including GPS coordinates
+http://api.seatgeek.com/2/venues/21
