@@ -1,0 +1,1 @@
+python pymos -ts 75 C:/Users/maura/Documents/GitHub/pymos/PyMos/fenway1.jpg mosaic.png C:/Users/maura/Documents/GitHub/pymos/PyMos/tools/
