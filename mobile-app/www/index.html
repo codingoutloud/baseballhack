@@ -1,0 +1,105 @@
+<html ng-app="ionicApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    
+    <title>Tabs Example</title>
+
+    <!-- ionic css -->
+    <link href="lib/css/ionic.css" rel="stylesheet">
+
+    <!-- your app's css -->
+    <link href="css/app.css" rel="stylesheet">
+
+    <!-- ionic/angularjs scripts -->
+    <script src="lib/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's script -->
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/images.js"></script>
+  </head>
+
+  <body>
+    
+    <ion-nav-bar animation="nav-title-slide-ios7" 
+             type="bar-positive" 
+             back-button-type="button-icon" 
+             back-button-icon="ion-arrow-left-c"></ion-nav-bar>
+             
+    <ion-nav-view animation="slide-left-right"></ion-nav-view>
+
+
+    <script id="tabs.html" type="text/ng-template">
+      <ion-tabs tabs-style="tabs-icon-top" tabs-type="tabs-positive">
+
+        <ion-tab title="Submit" icon="ion-camera" href="#/tab/home">
+          <ion-nav-view name="home-tab"></ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="Your Mashups" icon="ion-image" ui-sref="tabs.contact">
+          <ion-nav-view name="contact-tab"></ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="About" icon="ion-ios7-information" href="#/tab/about">
+          <ion-nav-view name="about-tab"></ion-nav-view>
+        </ion-tab>
+
+      </ion-tabs>
+    </script>
+
+    <script id="home.html" type="text/ng-template">
+      <ion-view title="'Home'">
+        <ion-content has-header="true" padding="true">
+          <p>Upload a photo from the ballpark.</p>
+          <p>
+            <button class="button icon icon-right ion-image" onclick="getPhoto(pictureSource.PHOTOLIBRARY);">Choose photo</button>
+            <button class="button icon icon-right ion-camera" onclick="capturePhoto();">Take photo</button>
+          </p>
+        </ion-content>
+      </ion-view>
+    </script>
+
+<!-- I'm not going to use this
+    <script id="facts.html" type="text/ng-template">
+      <ion-view title="'Facts'">
+        <ion-content has-header="true" padding="true">
+        </ion-content>
+      </ion-view>
+    </script>
+
+
+    <script id="facts2.html" type="text/ng-template">
+      <ion-view title="'Also Factual'">
+        <ion-content has-header="true" padding="true">
+        </ion-content>
+      </ion-view>
+    </script>
+-->
+    <script id="contact.html" type="text/ng-template">
+      <ion-view title="'Your Mashups'">
+        <ion-content has-header="true" padding="true">
+
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <script id="about.html" type="text/ng-template">
+      <ion-view title="'About'">
+        <ion-content has-header="true" padding="true">
+          <h3>Baseball Hack Day</h3>
+          <p>This was a team effort during the Boston Baseball Hack Day</p>
+          <p>Built with Ionic, Phonegap, a handful of python scripts and runs on Dunkin</p>
+        </ion-content>
+      </ion-view>
+    </script>
+
+
+
+
+  </body>
+</html>
