@@ -10,12 +10,12 @@ lat = '42.355056'
 lon = '-71.065503'
 rad = 10
 the_date = '2013-08-04'
-
+the_date_end = '2013-10-05'
 #photos = flickr.photos_search(tags='boston', lat='42.355056', lon='-71.065503', radius='5')
-photos = flickr.photos_search(lat=lat, lon=lon, radius=rad) 
-#	min_taken_date=the_date, max_taken_date=the_date)
+photos = flickr.photos_search(lat=lat, lon=lon, radius=rad,	min_taken_date=the_date, max_taken_date=the_date_end)
 
-maxdown = 2
+maxdown = 12
+n = 1
 
 print "starting..."
 for photo in photos[0]:
@@ -30,20 +30,23 @@ for photo in photos[0]:
             url = photoSizes[0][1].attrib['source']
             print "URL => " + url
             d = dir(url)
-            print(d)
+            #print(d)
 
-            down_file(url)
+
+            #down_file(url, n)
+            urllib.urlretrieve(url, 'flick%d.jpg' % n)
+            n = n + 1
             #download_file(url)
         except:
             print "exception: %s" % sys.exc_info()[0]
-            pass
+            #pass
     else:
         #print "-- REACHED MAX DOWNLOADS --"
         sys.exit
 
-def down_file(url):
+def down_file(url, n):
     print "hello to %s" % url
-    urllib.urlretrieve(url)
+    #urllib.urlretrieve(url, 'flick%d' % n)
 
 
 def download_file(url):
