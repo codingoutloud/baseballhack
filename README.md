@@ -3,6 +3,9 @@ hackbaseball
 
 Baseball Hackathon March 2, 2014
 
+https://docs.google.com/presentation/d/1MVd1WR0OWrEGgEqyLaaP8mntyLcno7WisA3WTwQvkZk/edit?usp=sharing
+
+
 https://github.com/baseballhackday/2014-data-and-resources/wiki/Resources-and-ideas,-2014
 
 http://baseballhackday.tumblr.com/
