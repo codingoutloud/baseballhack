@@ -6,16 +6,21 @@ import urllib
 api_key = '652dbd597aa5103e20afe8fdf3b4f42e'
 flickr = flickrapi.FlickrAPI(api_key, cache=True)
 
+# Fenway from wikipedia 42  20 47 N 71 5 51 W
 lat = '42.355056'
 lon = '-71.065503'
-rad = 10
+lat = '42.33'
+lon = '-71.6'
+rad = 20
 the_date = '2013-08-04'
 the_date_end = '2013-10-05'
 #photos = flickr.photos_search(tags='boston', lat='42.355056', lon='-71.065503', radius='5')
-photos = flickr.photos_search(lat=lat, lon=lon, radius=rad,	min_taken_date=the_date, max_taken_date=the_date_end)
+#photos = flickr.photos_search(tags='fenway park')
+photos = flickr.photos_search(tags='david ortiz')
+	#, lat=lat, lon=lon, radius=rad,	min_taken_date=the_date, max_taken_date=the_date_end)
 
-maxdown = 12
-n = 1
+maxdown = 177700
+n = 10000
 
 print "starting..."
 for photo in photos[0]:
