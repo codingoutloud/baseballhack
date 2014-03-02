@@ -26,3 +26,6 @@ Location based searches of instagram should just need the client ID in the reque
 
 Get fenway park data from seatgeek including GPS coordinates
 http://api.seatgeek.com/2/venues/21
+
+This might explain how to read the meta data from the submitted photo 
+http://stackoverflow.com/questions/4764932/in-python-how-do-i-read-the-exif-data-for-an-image
