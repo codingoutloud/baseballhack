@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="jquery-1.7.1.js"></script>
+    <script type="text/javascript" src="jquery.exif.js"></script>
+</head>
+
+<body>
+    <form id="myform" action="/Home/Upload"
+          enctype="multipart/form-data" method="post">
+        <input type="file" id="file" name="file" size="40"> </br>
+        <label>Closest Park</label>
+        <input type="text" name="park" id="park" size="40" /> </br>
+
+        <label>DateString</label>
+        <input type="text" name="date" id="date" size="40" /> </br>
+        <input type="submit" value="Send">
+
+    </form>
+    <script>
+
+        var PETCO = {}
+        PETCO.name = "Petco"
+        PETCO.location = "San Diego, CA";
+        PETCO.GEO = {};
+        PETCO.GEO.lang = [32, 70, 73, 'N'];
+        PETCO.GEO.lat = [117, 15, 66, 'W'];
+        PETCO.GEO.latRange = [31, 33];
+        PETCO.GEO.longRange = [116, 118];
+
+
+
+        var FENWAY = {}
+        FENWAY.name = "Fenway";
+        FENWAY.location = "Boston, MA";
+        FENWAY.GEO = {};
+        FENWAY.GEO.lat = [42, 34, 64, 'N'];
+        FENWAY.GEO.long = [71, 9, 75, 'W'];
+        FENWAY.GEO.longRange = [70, 72];
+        FENWAY.GEO.latRange = [41, 43];
+
+        function getClosestPark(/*GEO array*/ long, /*GEO array*/ lat) {
+            // GEO array has 3 coordinates [degree, min, sec, direction]
+
+
+            if ((lat >= FENWAY.GEO.latRange[0] && lat <= FENWAY.GEO.latRange[1]) &&
+                (long >= FENWAY.GEO.longRange[0] && long <= FENWAY.GEO.longRange[1])) {
+                return FENWAY.name;
+            }
+            if ((lat >= PETCO.GEO.latRange[0] && lat <= PETCO.GEO.latRange[1]) &&
+                (long >= PETCO.GEO.longRange[0] && long <= PETCO.GEO.longRange[1])) {
+                return PETCO.name;
+            }
+            return "No park found";
+
+        }
+
+        var someCallback = function (exifObject) {
+
+            if (!exifObject.GPSLatitude) {
+                return "turn on geotagging on your phone";
+            }
+
+            var latDegrees = exifObject.GPSLatitude[0];
+            var longDegrees = exifObject.GPSLongitude[0];
+
+            var parkName = getClosestPark(longDegrees, latDegrees);
+            var datestamp = exifObject.DateTimeOriginal;
+
+
+            $('#park').val(parkName);
+            $('#date').val(datestamp);
+
+            // Uncomment the line below to examine the
+            // EXIF object in console to read other values
+            //console.log(exifObject);
+
+        }
+
+        try {
+            $('#file').change(function () {
+                $(this).fileExif(someCallback);
+            });
+        }
+        catch (e) {
+            alert(e);
+        }
+
+    </script>
+</body>
+</html>
