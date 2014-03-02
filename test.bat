@@ -1,1 +1,1 @@
-python pymos -ts 75 C:\dev\github\hackbaseball\images\higgins.jpg c:\dev\mosaic.png C:\dev\github\hackbaseball\blob\temp
+python pymos -ts 75 C:\Users\maura\Documents\GitHub\hackbaseball\images\higgins.jpg c:\dev\mosaic.png C:\Users\maura\Documents\GitHub\hackbaseball\blob\source
