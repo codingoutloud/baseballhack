@@ -1,9 +1,7 @@
 ﻿@{
+    Layout = null;
     ViewBag.Title = "Uploaded Files";
 }
 <ul>
-    <% foreach (ViewDataUploadFilesResult v in this.ViewData.Model)  { %>
-    <%=String.Format("
-    <li>Uploaded: {0} totalling {1} bytes.</li>",v.Name,v.Length) %>
-    <%   } %>
+    <li>Your file was uploaded successfully.</li>
 </ul>
